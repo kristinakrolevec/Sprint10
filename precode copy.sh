@@ -2,16 +2,13 @@
 
 # создаём каталог task с вложенными директориями
 # task
-mkdir task
-chmod 777 ./task
 #   dir1
-mkdir ./task/dir1
 #   dir2
-mkdir ./task/dir2
 #   dir3
-mkdir ./task/dir3
 #       dir4
-mkdir ./task/dir4
+mkdir -p ./task/dir1 ./task/dir2 ./task/dir3/dir4
+chmod 777 ./task
+
 
 # изменяем текущую директорию на task
 cd task
@@ -32,7 +29,6 @@ chmod 764 ./dir2/hello.sh
 ls ./dir2 > ./dir2/list.txt
 
 # копируем содержимое каталога task/dir2 в каталог task/dir3/dir4
-mkdir ./dir3/dir4
 cp -r -T ./dir2 ./dir3/dir4
 
 # записываем в task/dir1/summary.txt список файлов с расширением *.txt
